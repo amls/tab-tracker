@@ -1,4 +1,3 @@
-console.log('hello')
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -9,9 +8,9 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors()) //security risk pag nag cors meaning globally people can access your application
 
-app.get('/status', (req,res)=>{
+app.post('/register', (req,res) => {
     res.send({
-        message: 'hello world!'
+        message: `Hello ${req.body.email} was registered! Have fun!`
     })
 })
 
